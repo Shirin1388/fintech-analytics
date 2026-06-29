@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: raw
+    database: FINTECH_DB
+    schema: RAW
+    tables:
+      - name: RAW_TRANSACTIONS
+        description: "Raw transactions loaded from data generator"
+        columns:
+          - name: TRANSACTION_ID
+            description: "Unique transaction identifier"
+          - name: CUSTOMER_ID
+            description: "Customer identifier"
+          - name: AMOUNT_USD
+            description: "Transaction amount in USD"

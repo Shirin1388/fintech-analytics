@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: mart_customer_behavior
+    description: "Customer-level behavior aggregation with AML risk scoring"
+    columns:
+      - name: customer_id
+        description: "Unique customer identifier"
+        data_tests:
+          - unique
+          - not_null
+      - name: risk_level
+        description: "AML risk level: HIGH, MEDIUM, LOW"
+        data_tests:
+          - accepted_values:
+              values: ['HIGH', 'MEDIUM', 'LOW']
+
+  - name: mart_anomaly_transactions
+    description: "Flagged transactions with anomaly indicators and z-scores"
+    columns:
+      - name: transaction_id
+        description: "Unique transaction identifier"
+        data_tests:
+          - unique
+          - not_null
